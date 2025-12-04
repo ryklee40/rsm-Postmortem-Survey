@@ -1,0 +1,164 @@
+/* make the page background & text global */
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: #e0e0e0;               /* light gray page background */
+  color: var(--rsm-midnight);              /* midnight‑blue text everywhere */
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;  /* horizontal centering */
+  align-items: center;      /* vertical centering */
+  min-height: 100vh;  
+}
+
+/* app container =  white “form” box */
+.App {
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem;
+  background-color: #fff;                 /* white form container */
+  color: var(--rsm-midnight);              /* ensure text inside is midnight */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  border-radius: 20px;
+
+}
+
+/* question groups (if you still want a sub‑container) */
+.question-group {
+  background-color: #fff;                  /* white as well */
+  color: var(--rsm-midnight);              /* midnight text for questions */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+/* futuristic button unchanged */
+button {
+  background: linear-gradient(135deg, var(--rsm-magenta), var(--rsm-orange));
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+/* inputs & selects with blue→green gradient */
+input[type="text"],
+select {
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 320px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--rsm-blue), var(--rsm-green));
+  background: #fff;
+  border: 2px solid var(--rsm-blue); 
+
+  color: var(--rsm-midnight);
+  color: black;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  transition: box-shadow 0.3s ease;
+}
+input[type="text"]:hover,
+select:hover,
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* radio labels remain midnight by default */
+.radio-label {
+  color: var(--rsm-midnight);
+}
+/* base label */
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: black; /* white by default */
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* hover glows */
+.radio-label.green:hover {
+  color: var(--rsm-green);
+  text-shadow: 0 0 8px var(--rsm-green), 0 0 16px var(--rsm-green);
+}
+
+.radio-label.yellow:hover {
+  color: #CEC264;
+  text-shadow: 0 0 8px #CEC264, 0 0 16px#CEC264;
+}
+
+.radio-label.red:hover {
+  color: #A13730;
+  text-shadow: 0 0 8px #A13730, 0 0 16px #A13730;
+}
+
+/* make the native radio circle match the label’s currentColor */
+.radio-input {
+  margin-right: 6px;
+  accent-color: currentColor;
+}
+
+/* App.css */
+
+/* your existing rules... */
+
+.radio-input.green   { accent-color: var(--rsm-green); }  /* green fill when checked */
+.radio-input.yellow  { accent-color: #e9d95f; }  /* yellow fill when checked */
+.radio-input.red     { accent-color: #A13730; }  /* red fill when checked */
+
+h1, h2 {
+  background: linear-gradient(to right, var(--rsm-blue), var(--rsm-green));
+
+  /* 2) make the background show through only where the text is */
+  -webkit-background-clip: text;    /* Chrome, Safari, Edge */
+          background-clip: text;    /* future‑proof spec */
+
+  /* 3) hide the default text color so you only see the gradient */
+  -webkit-text-fill-color: transparent;
+          color: transparent;      /* fallback for non‑WebKit */
+}
+option{
+  margin: 10px;
+}
+
+/* make every label a block and give it some bottom‐margin */
+.App-body label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* force selects (and text inputs) to sit under the label,
+   and give them a little top-margin so they’re not jammed up */
+.App-body select,
+.App-body input[type="text"] {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 12px; /* optional spacing before the next question */
+  width: 100%;         /* if you want them full-width again */
+  border-radius: 20px;
+}

@@ -1,0 +1,29 @@
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+:root {
+  /* Font */
+  --font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-weight-normal: 400;
+
+  /* RSM US brand colors */
+  --rsm-midnight: #00153D;   /* Midnight Blue :contentReference[oaicite:0]{index=0} */
+  --rsm-blue:  #009CDE;   /* RSM Magenta :contentReference[oaicite:1]{index=1} */
+  --rsm-green:   #4E9D30;   /* RSM Orange :contentReference[oaicite:2]{index=2} */
+}
+
+:root {
+  --rsm-midnight: #00153D;
+  --rsm-magenta:  #009CDE;  /* now your accent‑blue */
+  --rsm-orange:   #489D46;  /* now your accent‑green */
+
+}
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
