@@ -20,7 +20,7 @@ function App() {
 
   // Load Questions and Projects
   useEffect(() => {
-    fetch("/questions.xlsx")
+    fetch(`${process.env.PUBLIC_URL}/questions.xlsx`)
       .then(res => res.arrayBuffer())
       .then(buffer => {
         const wb = XLSX.read(buffer, { type: "array" });
